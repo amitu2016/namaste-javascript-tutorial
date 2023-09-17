@@ -1,19 +1,27 @@
-//console log string start
-console.log("Start");
+//Write a program to calculate circumference, diameter and area of circle with given arrays of radius
 
-//create an anonymous function with settimeout of 5 seconds
-setTimeout(function () {
-    console.log("Callback");
-}, 5000);
+const radius = [2, 4, 1, 5, 7];
 
-//console log string end
-console.log("End");
-
-//Block the main thread for 10 seconds using while loop and date api
-let startTime = new Date().getTime();
-let endTime = startTime;
-while (endTime < startTime + 10000) {
-    endTime = new Date().getTime();
+const calculateCircumference = function (radius) {
+    return 2 * Math.PI * radius;
 }
 
-console.log("While Expires");
+const calculateDiamter = function (radius) {
+    return 2 * radius;
+}
+
+const calculateArea = function (radius){
+    return Math.PI * radius * radius;
+}
+
+const calculate = function (radius, logic) {
+    const output = [];
+    for (let index = 0; index < radius.length; index++) {
+         output.push(logic(radius[index]))   
+    }
+    return output;
+}
+
+console.log(calculate(radius,calculateCircumference));
+console.log(calculate(radius,calculateDiamter));
+console.log(calculate(radius,calculateArea));
