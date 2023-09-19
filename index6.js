@@ -1,4 +1,4 @@
-//Reduce function in Javascript
+//Filter function in Javascript
 
 const arr = [5, 1, 3, 2, 6, 7, 4];
 
